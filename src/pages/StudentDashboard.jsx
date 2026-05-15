@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { db } from '../firebase/config';
 import { collection, onSnapshot, query, orderBy } from 'firebase/firestore';
+import ProfileUpload from '../components/ProfileUpload';
 
 const StudentDashboard = () => {
   const { currentUser } = useAuth();
@@ -53,6 +54,8 @@ const StudentDashboard = () => {
             <span className="stat-label">Present</span>
           </div>
         </div>
+
+        <ProfileUpload />
 
         <div className="dashboard-card">
           <h3>Recent Notices</h3>

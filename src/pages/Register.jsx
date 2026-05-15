@@ -49,6 +49,8 @@ const Register = () => {
       
       if (formData.fullName !== sanitizedFullName) {
         console.warn("⚠️ MALICIOUS PAYLOAD DETECTED AND STRIPPED!");
+        // Instead of silently continuing, we explicitly block it to show a clear demo
+        throw new Error("SECURITY ALERT: Malicious XSS script detected in Full Name! Registration blocked.");
       }
       console.log("Sanitized Full Name Output:", sanitizedFullName);
 
